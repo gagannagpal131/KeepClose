@@ -8,15 +8,29 @@
 
 import UIKit
 import CoreData
+import CoreLocation
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var gameTimer: Timer!
+    var locationManager = CLLocationManager()
+    let beaconRegion = CLBeaconRegion(proximityUUID: UUID(uuidString:"23A01AF0-232A-4518-9C0E-323FB773F5EF")!, major: 0, minor: 0, identifier: "MyBeacon")
+    
+    var backgroundTask: UIBackgroundTaskIdentifier = UIBackgroundTaskInvalid
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // For region monitoring.
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startMonitoring(for: beaconRegion)
+        locationManager.startRangingBeacons(in: beaconRegion)
+        
         return true
     }
 
@@ -28,6 +42,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        // RAO: Register Backgroundtask.
+        self.registerBackgroundTask()
+        self.applicationState()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -91,3 +109,93 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+// MARK: CLLocationManagerDelegate
+extension AppDelegate: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
+        
+        for beacon: CLBeacon in beacons {
+            //print(beacon.rssi)
+            R_VALUE = beacon.rssi
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        guard region is CLBeaconRegion else { return }
+        
+//        let content = UNMutableNotificationContent()
+//        content.title = "KeepClose"
+//        content.body = "Entered the region!"
+//        content.sound = .default()
+//
+//        for _ in 1...20 {
+//
+//            let request = UNNotificationRequest(identifier: "KeepClose", content: content, trigger: nil)
+//            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        guard region is CLBeaconRegion else { return }
+        
+//        let content = UNMutableNotificationContent()
+//        content.title = "KeepClose"
+//        content.body = "Are you forgetting something?"
+//        content.sound = .default()
+//
+//        let request = UNNotificationRequest(identifier: "KeepClose", content: content, trigger: nil)
+//        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+}
+
+// MARK: BackgroundTask
+extension AppDelegate {
+    
+    func applicationState() {
+        //call endBackgroundTask() on completion..
+        switch UIApplication.shared.applicationState {
+        case .active:
+            print("App is active.")
+        case .background:
+            print("App is in background.")
+            print("Background time remaining = \(UIApplication.shared.backgroundTimeRemaining) seconds")
+            self.repeat_value()
+        case .inactive:
+            break
+        }
+    }
+    
+    func registerBackgroundTask() {
+        backgroundTask = UIApplication.shared.beginBackgroundTask { [weak self] in
+            self?.update()
+            self?.endBackgroundTask()
+        }
+        assert(backgroundTask != UIBackgroundTaskInvalid)
+    }
+    
+    func endBackgroundTask() {
+        print("Background task ended.")
+        UIApplication.shared.endBackgroundTask(backgroundTask)
+        backgroundTask = UIBackgroundTaskInvalid
+    }
+    
+    func repeat_value() {
+        
+        gameTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+        
+    }
+    
+    @objc func update(){
+        
+        print(R_VALUE)
+        if (R_VALUE < -90) {
+            
+            let content = UNMutableNotificationContent()
+            content.title = "KeepClose"
+            content.body = "Are you forgetting something?"
+            content.sound = .default()
+            
+            let request = UNNotificationRequest(identifier: "KeepClose", content: content, trigger: nil)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        }
+    }
+}

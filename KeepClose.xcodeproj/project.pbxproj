@@ -13,6 +13,7 @@
 		194FE04B1F85F32A0054EBCC /* KeepClose.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 194FE0491F85F32A0054EBCC /* KeepClose.xcdatamodeld */; };
 		194FE04D1F85F32A0054EBCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 194FE04C1F85F32A0054EBCC /* Assets.xcassets */; };
 		194FE0501F85F32A0054EBCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194FE04E1F85F32A0054EBCC /* LaunchScreen.storyboard */; };
+		194FE05D1F8602060054EBCC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194FE05C1F8602060054EBCC /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		194FE04C1F85F32A0054EBCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		194FE04F1F85F32A0054EBCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		194FE0511F85F32A0054EBCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		194FE05C1F8602060054EBCC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,56 @@
 		194FE0411F85F32A0054EBCC /* KeepClose */ = {
 			isa = PBXGroup;
 			children = (
+				194FE05B1F85F3750054EBCC /* Util */,
+				194FE05A1F85F36F0054EBCC /* Model */,
+				194FE0591F85F36A0054EBCC /* View */,
+				194FE0581F85F3640054EBCC /* Controller */,
+				194FE0571F85F35D0054EBCC /* Resources */,
 				194FE0421F85F32A0054EBCC /* AppDelegate.swift */,
-				194FE0441F85F32A0054EBCC /* ViewController.swift */,
 				194FE0461F85F32A0054EBCC /* Main.storyboard */,
-				194FE04C1F85F32A0054EBCC /* Assets.xcassets */,
 				194FE04E1F85F32A0054EBCC /* LaunchScreen.storyboard */,
 				194FE0511F85F32A0054EBCC /* Info.plist */,
 				194FE0491F85F32A0054EBCC /* KeepClose.xcdatamodeld */,
 			);
 			path = KeepClose;
+			sourceTree = "<group>";
+		};
+		194FE0571F85F35D0054EBCC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				194FE04C1F85F32A0054EBCC /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		194FE0581F85F3640054EBCC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				194FE0441F85F32A0054EBCC /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		194FE0591F85F36A0054EBCC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		194FE05A1F85F36F0054EBCC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		194FE05B1F85F3750054EBCC /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				194FE05C1F8602060054EBCC /* Constants.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				194FE0451F85F32A0054EBCC /* ViewController.swift in Sources */,
+				194FE05D1F8602060054EBCC /* Constants.swift in Sources */,
 				194FE0431F85F32A0054EBCC /* AppDelegate.swift in Sources */,
 				194FE04B1F85F32A0054EBCC /* KeepClose.xcdatamodeld in Sources */,
 			);
