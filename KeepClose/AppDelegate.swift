@@ -11,6 +11,9 @@ import CoreData
 import CoreLocation
 import UserNotifications
 
+var r_value: Int = 0    //used to indicate the rssi value
+var beacon: CLBeacon?
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -30,6 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         locationManager.requestAlwaysAuthorization()
         locationManager.startMonitoring(for: beaconRegion)
         locationManager.startRangingBeacons(in: beaconRegion)
+        
+        //For notifications
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options:[.alert, .sound]) { (granted, error) in }
         
         return true
     }
@@ -116,7 +123,7 @@ extension AppDelegate: CLLocationManagerDelegate {
         
         for beacon: CLBeacon in beacons {
             //print(beacon.rssi)
-            R_VALUE = beacon.rssi
+           r_value = beacon.rssi
         }
     }
     
@@ -186,12 +193,12 @@ extension AppDelegate {
     
     @objc func update(){
         
-        print(R_VALUE)
-        if (R_VALUE < -90) {
+        print(r_value)
+        if (r_value < -60) {
             
             let content = UNMutableNotificationContent()
-            content.title = "KeepClose"
-            content.body = "Are you forgetting something?"
+            content.title = "CHECK YOUR BELONGINGS!"
+            content.body = "You Might Be Forgetting Something"
             content.sound = .default()
             
             let request = UNNotificationRequest(identifier: "KeepClose", content: content, trigger: nil)
