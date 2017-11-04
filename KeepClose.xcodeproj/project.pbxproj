@@ -14,6 +14,8 @@
 		194FE04D1F85F32A0054EBCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 194FE04C1F85F32A0054EBCC /* Assets.xcassets */; };
 		194FE0501F85F32A0054EBCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194FE04E1F85F32A0054EBCC /* LaunchScreen.storyboard */; };
 		194FE05D1F8602060054EBCC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194FE05C1F8602060054EBCC /* Constants.swift */; };
+		7662A43B1FADAAB000D65120 /* AddBeaconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7662A43A1FADAAB000D65120 /* AddBeaconViewController.swift */; };
+		7662A43D1FADAAE800D65120 /* WelcomeScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7662A43C1FADAAE800D65120 /* WelcomeScreenController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		194FE04F1F85F32A0054EBCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		194FE0511F85F32A0054EBCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		194FE05C1F8602060054EBCC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7662A43A1FADAAB000D65120 /* AddBeaconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBeaconViewController.swift; sourceTree = "<group>"; };
+		7662A43C1FADAAE800D65120 /* WelcomeScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				194FE0441F85F32A0054EBCC /* ViewController.swift */,
+				7662A43A1FADAAB000D65120 /* AddBeaconViewController.swift */,
+				7662A43C1FADAAE800D65120 /* WelcomeScreenController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -184,7 +190,9 @@
 			files = (
 				194FE0451F85F32A0054EBCC /* ViewController.swift in Sources */,
 				194FE05D1F8602060054EBCC /* Constants.swift in Sources */,
+				7662A43B1FADAAB000D65120 /* AddBeaconViewController.swift in Sources */,
 				194FE0431F85F32A0054EBCC /* AppDelegate.swift in Sources */,
+				7662A43D1FADAAE800D65120 /* WelcomeScreenController.swift in Sources */,
 				194FE04B1F85F32A0054EBCC /* KeepClose.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
