@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AddBeaconViewController: UIViewController {
+class AddBeaconViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var beaconImage: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
@@ -23,8 +23,13 @@ class AddBeaconViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nameTextField.delegate = self
+        uuidTextField.delegate = self
+        majorTextField.delegate = self
+        minorTextField.delegate = self
+        
         imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = .camera
         imagePicker.allowsEditing = true
         imagePicker.delegate = self
         
@@ -37,7 +42,12 @@ class AddBeaconViewController: UIViewController {
             
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         }
+        
+       
+        
     }
+    
+    
     
     @objc func selectImage() {
         present(imagePicker, animated: true, completion: nil)
@@ -79,6 +89,30 @@ class AddBeaconViewController: UIViewController {
         
         navigationController?.popViewController(animated: true)
     }
+    
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    
 }
 
 // Extension for UIImagePickerView.
