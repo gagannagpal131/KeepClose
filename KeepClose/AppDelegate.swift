@@ -28,6 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        // RAO: Path for Core Data.
+        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        print("RAO: \(path[path.count - 1] as URL)")
+        
         // For region monitoring.
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
@@ -116,7 +120,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-// MARK: CLLocationManagerDelegate
+// RAO: AppDelegate and Context for Core Data.
+let appDelegate = UIApplication.shared.delegate as! AppDelegate
+let context = appDelegate.persistentContainer.viewContext
+
+// MARK: CLLocationManagerDelegate.
 extension AppDelegate: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
