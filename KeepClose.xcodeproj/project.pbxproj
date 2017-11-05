@@ -14,6 +14,7 @@
 		194FE04D1F85F32A0054EBCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 194FE04C1F85F32A0054EBCC /* Assets.xcassets */; };
 		194FE0501F85F32A0054EBCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194FE04E1F85F32A0054EBCC /* LaunchScreen.storyboard */; };
 		194FE05D1F8602060054EBCC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194FE05C1F8602060054EBCC /* Constants.swift */; };
+		338670201FAF5D1F00F1B049 /* BeaconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3386701F1FAF5D1F00F1B049 /* BeaconTableViewCell.swift */; };
 		7662A43B1FADAAB000D65120 /* AddBeaconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7662A43A1FADAAB000D65120 /* AddBeaconViewController.swift */; };
 		7662A43D1FADAAE800D65120 /* WelcomeScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7662A43C1FADAAE800D65120 /* WelcomeScreenController.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +29,7 @@
 		194FE04F1F85F32A0054EBCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		194FE0511F85F32A0054EBCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		194FE05C1F8602060054EBCC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3386701F1FAF5D1F00F1B049 /* BeaconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconTableViewCell.swift; sourceTree = "<group>"; };
 		7662A43A1FADAAB000D65120 /* AddBeaconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBeaconViewController.swift; sourceTree = "<group>"; };
 		7662A43C1FADAAE800D65120 /* WelcomeScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,8 +65,8 @@
 			isa = PBXGroup;
 			children = (
 				194FE05B1F85F3750054EBCC /* Util */,
-				337DE57E1FAF0E5D00F60B3E /* Model */,
-				337DE57F1FAF0E6200F60B3E /* View */,
+				3386701D1FAF526D00F1B049 /* Model */,
+				3386701E1FAF527500F1B049 /* View */,
 				194FE0581F85F3640054EBCC /* Controller */,
 				194FE0571F85F35D0054EBCC /* Resources */,
 				194FE0421F85F32A0054EBCC /* AppDelegate.swift */,
@@ -102,16 +104,17 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
-		337DE57E1FAF0E5D00F60B3E /* Model */ = {
+		3386701D1FAF526D00F1B049 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		337DE57F1FAF0E6200F60B3E /* View */ = {
+		3386701E1FAF527500F1B049 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3386701F1FAF5D1F00F1B049 /* BeaconTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			files = (
 				194FE0451F85F32A0054EBCC /* ViewController.swift in Sources */,
 				194FE05D1F8602060054EBCC /* Constants.swift in Sources */,
+				338670201FAF5D1F00F1B049 /* BeaconTableViewCell.swift in Sources */,
 				7662A43B1FADAAB000D65120 /* AddBeaconViewController.swift in Sources */,
 				194FE0431F85F32A0054EBCC /* AppDelegate.swift in Sources */,
 				7662A43D1FADAAE800D65120 /* WelcomeScreenController.swift in Sources */,

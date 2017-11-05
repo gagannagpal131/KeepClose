@@ -42,9 +42,14 @@ class AddBeaconViewController: UIViewController, UITextFieldDelegate {
             
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         }
-        
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self,name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
     
     @objc func selectImage() {
         present(imagePicker, animated: true, completion: nil)
@@ -87,8 +92,6 @@ class AddBeaconViewController: UIViewController, UITextFieldDelegate {
         navigationController?.popViewController(animated: true)
     }
     
-    
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
@@ -126,14 +129,6 @@ class AddBeaconViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        NotificationCenter.default.removeObserver(self,name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-    }
-    
-    
 }
 
 // Extension for UIImagePickerView.
@@ -144,9 +139,9 @@ extension AddBeaconViewController: UIImagePickerControllerDelegate, UINavigation
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             beaconImage.image = image
             imageSelected = true
-            print("NEWRAO: A valid image is  selected.")
+            print("RAO: A valid image is  selected.")
         } else {
-            print("NEWRAO: A valid image is not selected.")
+            print("RAO: A valid image is not selected.")
         }
         imagePicker.dismiss(animated: true, completion: nil)
     }
