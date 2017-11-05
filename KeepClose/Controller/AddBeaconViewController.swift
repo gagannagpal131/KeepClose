@@ -16,9 +16,12 @@ class AddBeaconViewController: UIViewController {
     @IBOutlet weak var uuidTextField: UITextField!
     @IBOutlet weak var majorTextField: UITextField!
     @IBOutlet weak var minorTextField: UITextField!
+    @IBOutlet weak var addButton: UIButton!
     
     var imagePicker: UIImagePickerController!
     var imageSelected = false
+    
+    let uuidRegEx = try! NSRegularExpression(pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", options: .caseInsensitive)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +32,7 @@ class AddBeaconViewController: UIViewController {
         minorTextField.delegate = self
         
         imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = .camera
         imagePicker.allowsEditing = true
         imagePicker.delegate = self
         
@@ -101,6 +104,20 @@ class AddBeaconViewController: UIViewController {
         
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func textFieldEdited(_ sender: UITextField) {
+        
+        var uuidValid = false
+        
+        let uuidString = uuidTextField.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        if uuidString.count > 0 {
+            uuidValid = (uuidRegEx.numberOfMatches(in: uuidString, options: [], range: NSMakeRange(0, uuidString.count)) > 0)
+        }
+        uuidTextField.textColor = (uuidValid) ? .black : .red
+        
+        // Toggle addButton enabled based on valid user entry.
+        addButton.isEnabled = uuidValid
+    }
 }
 
 // MARK: UIImagePickerView.
@@ -148,5 +165,4 @@ extension AddBeaconViewController: UITextFieldDelegate {
             }
         }
     }
-
 }
