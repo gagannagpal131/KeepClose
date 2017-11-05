@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AddBeaconViewController: UIViewController, UITextFieldDelegate {
+class AddBeaconViewController: UIViewController {
     
     @IBOutlet weak var beaconImage: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
@@ -29,7 +29,7 @@ class AddBeaconViewController: UIViewController, UITextFieldDelegate {
         minorTextField.delegate = self
         
         imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
         imagePicker.delegate = self
         
@@ -101,6 +101,26 @@ class AddBeaconViewController: UIViewController, UITextFieldDelegate {
         
         navigationController?.popViewController(animated: true)
     }
+}
+
+// MARK: UIImagePickerView.
+extension AddBeaconViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            beaconImage.image = image
+            imageSelected = true
+            print("RAO: A valid image is  selected.")
+        } else {
+            print("RAO: A valid image is not selected.")
+        }
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: Text field delegate.
+extension AddBeaconViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
@@ -128,21 +148,5 @@ class AddBeaconViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    
-}
 
-// Extension for UIImagePickerView.
-extension AddBeaconViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
-            beaconImage.image = image
-            imageSelected = true
-            print("RAO: A valid image is  selected.")
-        } else {
-            print("RAO: A valid image is not selected.")
-        }
-        imagePicker.dismiss(animated: true, completion: nil)
-    }
 }
