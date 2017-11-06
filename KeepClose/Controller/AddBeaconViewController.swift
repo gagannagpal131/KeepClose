@@ -32,7 +32,7 @@ class AddBeaconViewController: UIViewController {
         minorTextField.delegate = self
         
         imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
         imagePicker.delegate = self
         
@@ -84,7 +84,8 @@ class AddBeaconViewController: UIViewController {
         }
         
         if let uuid = uuidTextField.text {
-            beacon.uuid = uuid
+            let uid = UUID(uuidString: uuid)
+            beacon.uuid = uid
         }
         
         if let major = majorTextField.text, major != "" {
