@@ -19,10 +19,10 @@ class BeaconTableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    func configureBeaconCell(beacon: Beacon) {
+    func configureBeaconCell(beacon: Beacon, beaconItem: BeaconItem) {
         
         beaconItemImage.image = beacon.image as? UIImage
         beaconNameLabel.text = beacon.name
+        beaconLocationLabel.text = beaconItem.locationString()
     }
-
 }

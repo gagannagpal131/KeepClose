@@ -16,6 +16,7 @@
 		194FE05D1F8602060054EBCC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194FE05C1F8602060054EBCC /* Constants.swift */; };
 		33040DA71FAF8512000C41A7 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33040DA61FAF8512000C41A7 /* CustomImageView.swift */; };
 		33040DAA1FAF8AEA000C41A7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33040DA91FAF8AEA000C41A7 /* CustomTextField.swift */; };
+		331599201FB0C75800A7AFA9 /* BeaconItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3315991F1FB0C75800A7AFA9 /* BeaconItem.swift */; };
 		338670201FAF5D1F00F1B049 /* BeaconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3386701F1FAF5D1F00F1B049 /* BeaconTableViewCell.swift */; };
 		7662A43B1FADAAB000D65120 /* AddBeaconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7662A43A1FADAAB000D65120 /* AddBeaconViewController.swift */; };
 		7662A43D1FADAAE800D65120 /* WelcomeScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7662A43C1FADAAE800D65120 /* WelcomeScreenController.swift */; };
@@ -33,6 +34,7 @@
 		194FE05C1F8602060054EBCC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		33040DA61FAF8512000C41A7 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		33040DA91FAF8AEA000C41A7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		3315991F1FB0C75800A7AFA9 /* BeaconItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconItem.swift; sourceTree = "<group>"; };
 		3386701F1FAF5D1F00F1B049 /* BeaconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconTableViewCell.swift; sourceTree = "<group>"; };
 		7662A43A1FADAAB000D65120 /* AddBeaconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBeaconViewController.swift; sourceTree = "<group>"; };
 		7662A43C1FADAAE800D65120 /* WelcomeScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenController.swift; sourceTree = "<group>"; };
@@ -69,7 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				194FE05B1F85F3750054EBCC /* Util */,
-				333A2F1D1FB0AC7D0071B8E1 /* Model */,
+				3315991E1FB0C72A00A7AFA9 /* Model */,
 				3386701E1FAF527500F1B049 /* View */,
 				194FE0581F85F3640054EBCC /* Controller */,
 				194FE0571F85F35D0054EBCC /* Resources */,
@@ -108,9 +110,10 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
-		333A2F1D1FB0AC7D0071B8E1 /* Model */ = {
+		3315991E1FB0C72A00A7AFA9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3315991F1FB0C75800A7AFA9 /* BeaconItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				338670201FAF5D1F00F1B049 /* BeaconTableViewCell.swift in Sources */,
 				7662A43B1FADAAB000D65120 /* AddBeaconViewController.swift in Sources */,
 				194FE0431F85F32A0054EBCC /* AppDelegate.swift in Sources */,
+				331599201FB0C75800A7AFA9 /* BeaconItem.swift in Sources */,
 				7662A43D1FADAAE800D65120 /* WelcomeScreenController.swift in Sources */,
 				194FE04B1F85F32A0054EBCC /* KeepClose.xcdatamodeld in Sources */,
 				33040DAA1FAF8AEA000C41A7 /* CustomTextField.swift in Sources */,
