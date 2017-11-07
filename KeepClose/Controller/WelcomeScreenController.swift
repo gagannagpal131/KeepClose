@@ -14,6 +14,12 @@ class WelcomeScreenController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        _ = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (timer) in
+            
+            self.performSegue(withIdentifier: "to_main_menu", sender: nil)
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
