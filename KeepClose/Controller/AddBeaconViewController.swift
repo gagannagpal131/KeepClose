@@ -41,10 +41,10 @@ class AddBeaconViewController: UIViewController {
         beaconImage.addGestureRecognizer(tap)
         beaconImage.isUserInteractionEnabled = true
         
-        if let topItem = self.navigationController?.navigationBar.topItem {
-            
-            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
-        }
+//        if let topItem = self.navigationController?.navigationBar.topItem {
+//            
+//            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

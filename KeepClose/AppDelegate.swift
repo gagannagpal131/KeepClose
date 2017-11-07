@@ -195,22 +195,31 @@ extension AppDelegate {
     
     func repeat_value() {
         
-        gameTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+        gameTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         
     }
     
     @objc func update(){
         
-        print(r_value)
-        if (r_value < -60) {
+        //print(r_value)
+        
+        let temp_uid = UUID(uuidString: "23A01AF0-232A-4518-9C0E-323FB773F5EF")
+        
+        print("GAGAN: \(globalBeacon.count)")
+        
+        if globalBeacon.count > 0 {
             
-            let content = UNMutableNotificationContent()
-            content.title = "CHECK YOUR BELONGINGS!"
-            content.body = "You Might Be Forgetting Something"
-            content.sound = .default()
-            
-            let request = UNNotificationRequest(identifier: "KeepClose", content: content, trigger: nil)
-            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            if (r_value < -75 && globalBeacon[0].uuid == temp_uid) {
+                                
+                print("GAGAN: inside the if")
+                let content = UNMutableNotificationContent()
+                content.title = "CHECK YOUR BELONGINGS!"
+                content.body = "You Might Be Forgetting Something"
+                content.sound = .default()
+                
+                let request = UNNotificationRequest(identifier: "KeepClose", content: content, trigger: nil)
+                UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            }
         }
     }
 }

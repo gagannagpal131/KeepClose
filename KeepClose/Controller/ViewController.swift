@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 import CoreLocation
 
+var globalBeacon = [Beacon]()
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -29,11 +31,17 @@ class ViewController: UIViewController {
         
         tableView.reloadData()
         loadCoreData()
+        
+        print("GAGAN: \(beacons.count)")
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         self.loadCoreData()
+    }
+    
+    func getBeacon() -> [Beacon] {
+        return beacons
     }
 
     // Load data from Core Data to "beacons".
@@ -42,6 +50,7 @@ class ViewController: UIViewController {
         
         do {
             beacons = try context.fetch(fetchRequest)
+            globalBeacon = beacons
             
             for beacon in beacons {
                 let beaconItem = BeaconItem(name: beacon.name!, uuid: beacon.uuid!, majorValue: Int(beacon.major), minorValue: Int(beacon.minor))
