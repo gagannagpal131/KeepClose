@@ -13,21 +13,13 @@ class WelcomeScreenController: UIViewController,PaperOnboardingDataSource, Paper
 
     @IBOutlet weak var onboardingView: OnboardingView!
     
-    
-    
     @IBOutlet weak var getStartedBtn: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         onboardingView.dataSource = self
         onboardingView.delegate = self
     }
-    
-    
-    
-    
-    
     
     func onboardingItemsCount() -> Int {
         return 3
@@ -47,7 +39,6 @@ class WelcomeScreenController: UIViewController,PaperOnboardingDataSource, Paper
                 
                 (imageName: #imageLiteral(resourceName: "Group"), title: "We have your Back!", description: "KeepClose makes use of BLE technology to keep an eye on your luggage for you. Now travel with one less worry and let us do the worrying for you.", iconName: #imageLiteral(resourceName: "Oval"), color: backgroundColorThree, titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont)][index]
     }
-    
     
     @objc func onboardingConfigurationItem(_ item: OnboardingContentViewItem, index: Int) {
         
@@ -74,17 +65,3 @@ class WelcomeScreenController: UIViewController,PaperOnboardingDataSource, Paper
     }
     
 }
-
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-

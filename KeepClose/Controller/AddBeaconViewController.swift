@@ -32,7 +32,7 @@ class AddBeaconViewController: UIViewController {
         minorTextField.delegate = self
         
         imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = .camera
         imagePicker.allowsEditing = true
         imagePicker.delegate = self
         
