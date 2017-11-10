@@ -14,6 +14,7 @@ var globalBeacon = [Beacon]()
 
 class ViewController: UIViewController {
 
+    
     @IBOutlet weak var tableView: UITableView!
     
     var beacons = [Beacon]()
@@ -22,6 +23,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //navigationController?.navigationBar.barTintColor  = UIColor.init(red: 240/255, green: 255/255, blue: 255/255, alpha: 1.0)
         
         tableView.delegate = self
         tableView.dataSource = self
