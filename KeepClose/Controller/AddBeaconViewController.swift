@@ -76,6 +76,8 @@ class AddBeaconViewController: UIViewController {
     // Save beacon data to Core Data.
     @IBAction func addButtonTapped(_ sender: UIButton) {
         
+        self.view.endEditing(true)
+        
         var beacon: Beacon!
         beacon = Beacon(context: context)
         
