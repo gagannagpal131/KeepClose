@@ -40,7 +40,7 @@ class AddBeaconViewController: UIViewController {
         minorTextField.delegate = self
         
         imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
         imagePicker.delegate = self
         
@@ -112,6 +112,13 @@ class AddBeaconViewController: UIViewController {
         }
         
         animateIn()
+        
+        _ = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (timer) in
+            
+            self.animateOut()
+            self.navigationController?.popViewController(animated: true)
+            
+        }
     }
     
     @IBAction func textFieldEdited(_ sender: UITextField) {
@@ -128,11 +135,7 @@ class AddBeaconViewController: UIViewController {
         addButton.isEnabled = uuidValid
     }
 
-    @IBAction func okButtonTapped(_ sender: Any) {
-        
-        animateOut()
-        navigationController?.popViewController(animated: true)
-    }
+    
     
     func animateIn() {
         
