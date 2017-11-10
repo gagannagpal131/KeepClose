@@ -130,30 +130,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I52-Fm-bsj">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="wLo-IE-7wN">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cy2-bK-PYf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="CCv-zY-IUZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <vibrancyEffect>
-                                                <blurEffect style="light"/>
-                                            </vibrancyEffect>
-                                        </visualEffectView>
-                                    </subviews>
-                                </view>
-                                <blurEffect style="light"/>
-                            </visualEffectView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bN3-G8-oDd" customClass="CustomTextField" customModule="KeepClose" customModuleProvider="target">
                                 <rect key="frame" x="69" y="350" width="236" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -199,6 +175,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="qFP-f1-DgX"/>
                     </view>
                     <connections>
@@ -209,14 +186,13 @@
                         <outlet property="minorTextField" destination="0M1-a4-vTJ" id="FWE-xQ-SBA"/>
                         <outlet property="nameTextField" destination="bN3-G8-oDd" id="T8Q-jE-mcF"/>
                         <outlet property="uuidTextField" destination="SLu-tl-N00" id="wUQ-cE-cMg"/>
-                        <outlet property="visualEffectView" destination="cy2-bK-PYf" id="ICq-5X-pQU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kKr-rD-6ec" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="Cvw-i7-Ngh">
                     <rect key="frame" x="0.0" y="0.0" width="335" height="400"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.76948034447740077" green="1" blue="0.81007723688292721" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <viewLayoutGuide key="safeArea" id="mHf-54-Ifb"/>
                 </view>
             </objects>

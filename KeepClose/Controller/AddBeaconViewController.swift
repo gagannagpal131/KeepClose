@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Lottie
 
 class AddBeaconViewController: UIViewController {
     
@@ -19,8 +20,6 @@ class AddBeaconViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     
     @IBOutlet var blurView: UIView!
-    @IBOutlet weak var visualEffectView: UIVisualEffectView!
-    var effect: UIVisualEffect!
     
     var imagePicker: UIImagePickerController!
     var imageSelected = false
@@ -30,9 +29,7 @@ class AddBeaconViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        effect = visualEffectView.effect
-        visualEffectView.effect = nil
-        blurView.layer.cornerRadius = 5.0
+        blurView.layer.cornerRadius = 50.0
         
         nameTextField.delegate = self
         uuidTextField.delegate = self
@@ -113,7 +110,7 @@ class AddBeaconViewController: UIViewController {
         
         animateIn()
         
-        _ = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (timer) in
+        _ = Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false) { (timer) in
             
             self.animateOut()
             self.navigationController?.popViewController(animated: true)
@@ -154,10 +151,17 @@ class AddBeaconViewController: UIViewController {
         
         UIView.animate(withDuration: 0.5) {
             
-            self.view.bringSubview(toFront: self.visualEffectView)
-            self.visualEffectView.effect = self.effect
             self.blurView.alpha = 1
             self.blurView.transform = CGAffineTransform.identity
+            
+            let animationView = LOTAnimationView(name: "tick_reveal")
+            animationView.frame = CGRect(x: 0, y: 0, width: 335.0, height: 400.0)
+            animationView.contentMode = .scaleAspectFit
+            
+            self.blurView.addSubview(animationView)
+            
+            animationView.play()
+            animationView.loopAnimation = false
         }
     }
     
@@ -167,7 +171,6 @@ class AddBeaconViewController: UIViewController {
             self.blurView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             self.blurView.alpha = 0
             
-            self.visualEffectView.effect = nil
         }) { (success: Bool) in
             self.blurView.removeFromSuperview()
         }

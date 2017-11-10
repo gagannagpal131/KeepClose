@@ -17,7 +17,9 @@
 		33040DA71FAF8512000C41A7 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33040DA61FAF8512000C41A7 /* CustomImageView.swift */; };
 		33040DAA1FAF8AEA000C41A7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33040DA91FAF8AEA000C41A7 /* CustomTextField.swift */; };
 		331599201FB0C75800A7AFA9 /* BeaconItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3315991F1FB0C75800A7AFA9 /* BeaconItem.swift */; };
+		332234E61FB614E50077D13F /* tick_reveal.json in Resources */ = {isa = PBXBuildFile; fileRef = 332234E41FB614E50077D13F /* tick_reveal.json */; };
 		338670201FAF5D1F00F1B049 /* BeaconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3386701F1FAF5D1F00F1B049 /* BeaconTableViewCell.swift */; };
+		4E1DE7298B0106D3F9DD52A3 /* Pods_KeepClose.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D339F3580225FCA618CF21A /* Pods_KeepClose.framework */; };
 		7662A43B1FADAAB000D65120 /* AddBeaconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7662A43A1FADAAB000D65120 /* AddBeaconViewController.swift */; };
 		7662A43D1FADAAE800D65120 /* WelcomeScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7662A43C1FADAAE800D65120 /* WelcomeScreenController.swift */; };
 		A1FAD0901FB1FD26005C5D8C /* PaperOnboarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1FAD08F1FB1FD26005C5D8C /* PaperOnboarding.framework */; };
@@ -50,12 +52,16 @@
 		194FE04F1F85F32A0054EBCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		194FE0511F85F32A0054EBCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		194FE05C1F8602060054EBCC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1F97593437F7E325089FC179 /* Pods-KeepClose.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeepClose.release.xcconfig"; path = "Pods/Target Support Files/Pods-KeepClose/Pods-KeepClose.release.xcconfig"; sourceTree = "<group>"; };
 		33040DA61FAF8512000C41A7 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		33040DA91FAF8AEA000C41A7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		3315991F1FB0C75800A7AFA9 /* BeaconItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconItem.swift; sourceTree = "<group>"; };
+		332234E41FB614E50077D13F /* tick_reveal.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tick_reveal.json; sourceTree = "<group>"; };
 		3386701F1FAF5D1F00F1B049 /* BeaconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconTableViewCell.swift; sourceTree = "<group>"; };
+		4D339F3580225FCA618CF21A /* Pods_KeepClose.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeepClose.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7662A43A1FADAAB000D65120 /* AddBeaconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBeaconViewController.swift; sourceTree = "<group>"; };
 		7662A43C1FADAAE800D65120 /* WelcomeScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenController.swift; sourceTree = "<group>"; };
+		7B143697ED51A3AF48CEF945 /* Pods-KeepClose.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeepClose.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KeepClose/Pods-KeepClose.debug.xcconfig"; sourceTree = "<group>"; };
 		A1FAD08B1FB1FBF0005C5D8C /* PaperOnboarding.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PaperOnboarding.framework; path = Carthage/Build/iOS/PaperOnboarding.framework; sourceTree = "<group>"; };
 		A1FAD08F1FB1FD26005C5D8C /* PaperOnboarding.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PaperOnboarding.framework; path = Carthage/Build/iOS/PaperOnboarding.framework; sourceTree = "<group>"; };
 		A1FAD0931FB1FE89005C5D8C /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = KeepClose/Media.xcassets; sourceTree = "<group>"; };
@@ -68,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1FAD0901FB1FD26005C5D8C /* PaperOnboarding.framework in Frameworks */,
+				4E1DE7298B0106D3F9DD52A3 /* Pods_KeepClose.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +89,8 @@
 				194FE0411F85F32A0054EBCC /* KeepClose */,
 				194FE0401F85F32A0054EBCC /* Products */,
 				A1FAD0931FB1FE89005C5D8C /* Media.xcassets */,
+				9E63C9F8BCD0E2BA7475F2D2 /* Pods */,
+				D1782C490D1EDAAC4BE15412 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +122,7 @@
 		194FE0571F85F35D0054EBCC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				332234E41FB614E50077D13F /* tick_reveal.json */,
 				194FE04C1F85F32A0054EBCC /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -155,6 +165,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		9E63C9F8BCD0E2BA7475F2D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7B143697ED51A3AF48CEF945 /* Pods-KeepClose.debug.xcconfig */,
+				1F97593437F7E325089FC179 /* Pods-KeepClose.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D1782C490D1EDAAC4BE15412 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D339F3580225FCA618CF21A /* Pods_KeepClose.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,10 +189,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 194FE0541F85F32A0054EBCC /* Build configuration list for PBXNativeTarget "KeepClose" */;
 			buildPhases = (
+				21AE5DF4E9C667C6F598E6A1 /* [CP] Check Pods Manifest.lock */,
 				194FE03B1F85F32A0054EBCC /* Sources */,
 				194FE03C1F85F32A0054EBCC /* Frameworks */,
 				194FE03D1F85F32A0054EBCC /* Resources */,
 				A1FAD0921FB1FD26005C5D8C /* Embed Frameworks */,
+				B125597E65667312CDC74EDF /* [CP] Embed Pods Frameworks */,
+				02A3F0B460034298BDD6E828 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,12 +247,67 @@
 			files = (
 				194FE0501F85F32A0054EBCC /* LaunchScreen.storyboard in Resources */,
 				194FE04D1F85F32A0054EBCC /* Assets.xcassets in Resources */,
+				332234E61FB614E50077D13F /* tick_reveal.json in Resources */,
 				A1FAD0941FB1FE89005C5D8C /* Media.xcassets in Resources */,
 				194FE0481F85F32A0054EBCC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02A3F0B460034298BDD6E828 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KeepClose/Pods-KeepClose-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		21AE5DF4E9C667C6F598E6A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KeepClose-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B125597E65667312CDC74EDF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-KeepClose/Pods-KeepClose-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KeepClose/Pods-KeepClose-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		194FE03B1F85F32A0054EBCC /* Sources */ = {
@@ -374,6 +459,7 @@
 		};
 		194FE0551F85F32A0054EBCC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B143697ED51A3AF48CEF945 /* Pods-KeepClose.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -393,6 +479,7 @@
 		};
 		194FE0561F85F32A0054EBCC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F97593437F7E325089FC179 /* Pods-KeepClose.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
