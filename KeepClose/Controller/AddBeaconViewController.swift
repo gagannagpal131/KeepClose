@@ -18,6 +18,10 @@ class AddBeaconViewController: UIViewController {
     @IBOutlet weak var minorTextField: UITextField!
     @IBOutlet weak var addButton: UIButton!
     
+    @IBOutlet var blurView: UIView!
+    @IBOutlet weak var visualEffectView: UIVisualEffectView!
+    var effect: UIVisualEffect!
+    
     var imagePicker: UIImagePickerController!
     var imageSelected = false
     
@@ -25,6 +29,10 @@ class AddBeaconViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        effect = visualEffectView.effect
+        visualEffectView.effect = nil
+        blurView.layer.cornerRadius = 5.0
         
         nameTextField.delegate = self
         uuidTextField.delegate = self
@@ -103,7 +111,7 @@ class AddBeaconViewController: UIViewController {
             print("RAO: Could not save data. \(error), \(error.userInfo)")
         }
         
-        navigationController?.popViewController(animated: true)
+        animateIn()
     }
     
     @IBAction func textFieldEdited(_ sender: UITextField) {
@@ -118,6 +126,48 @@ class AddBeaconViewController: UIViewController {
         
         // Toggle addButton enabled based on valid user entry.
         addButton.isEnabled = uuidValid
+    }
+
+    @IBAction func okButtonTapped(_ sender: Any) {
+        
+        animateOut()
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func animateIn() {
+        
+        self.beaconImage.isHidden = true
+        self.nameTextField.isHidden = true
+        self.uuidTextField.isHidden = true
+        self.majorTextField.isHidden = true
+        self.minorTextField.isHidden = true
+        self.addButton.isHidden = true
+        
+        self.view.addSubview(blurView)
+        blurView.center = self.view.center
+        
+        blurView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        blurView.alpha = 0
+        
+        UIView.animate(withDuration: 0.5) {
+            
+            self.view.bringSubview(toFront: self.visualEffectView)
+            self.visualEffectView.effect = self.effect
+            self.blurView.alpha = 1
+            self.blurView.transform = CGAffineTransform.identity
+        }
+    }
+    
+    func animateOut() {
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.blurView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            self.blurView.alpha = 0
+            
+            self.visualEffectView.effect = nil
+        }) { (success: Bool) in
+            self.blurView.removeFromSuperview()
+        }
     }
 }
 
