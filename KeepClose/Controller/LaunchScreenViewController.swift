@@ -15,7 +15,7 @@ class LaunchScreenViewController: UIViewController {
         super.viewDidLoad()
 
         self.launchAnimation()
-        _ = Timer.scheduledTimer(withTimeInterval: 2.6, repeats: false) { (timer) in
+        _ = Timer.scheduledTimer(withTimeInterval: 5.2, repeats: false) { (timer) in
             
             self.performSegue(withIdentifier: "WelcomeViewController", sender: nil)
         }

@@ -206,10 +206,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KEEP CLOSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFy-NC-ZJL">
-                                <rect key="frame" x="41" y="398.5" width="293" height="68.5"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="50"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KeepClose" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFy-NC-ZJL">
+                                <rect key="frame" x="68" y="400" width="239" height="67"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="49"/>
+                                <color key="textColor" red="0.32598374359999999" green="0.61618956970000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -221,7 +221,7 @@
                         <viewLayoutGuide key="safeArea" id="cuO-JV-ihN"/>
                     </view>
                     <connections>
-                        <segue destination="gQh-Eh-OFM" kind="show" identifier="WelcomeViewController" id="lhk-lT-2hj"/>
+                        <segue destination="gQh-Eh-OFM" kind="presentation" identifier="WelcomeViewController" modalTransitionStyle="crossDissolve" id="lhk-lT-2hj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcJ-ab-I3r" userLabel="First Responder" sceneMemberID="firstResponder"/>
