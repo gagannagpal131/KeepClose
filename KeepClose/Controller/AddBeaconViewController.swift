@@ -110,7 +110,7 @@ class AddBeaconViewController: UIViewController {
         
         animateIn()
         
-        _ = Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false) { (timer) in
+        _ = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (timer) in
             
             self.animateOut()
             self.navigationController?.popViewController(animated: true)

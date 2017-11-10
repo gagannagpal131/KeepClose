@@ -42,5 +42,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>ATSApplicationFontsPath</key>
+	<string>trench100free.ttf, Capsule X Pro Medium UC.otf</string>
 </dict>
 </plist>
