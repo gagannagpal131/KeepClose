@@ -105,6 +105,30 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            beaconItems.remove(at: indexPath.row)
+            beacons.remove(at: indexPath.row)
+            
+            let fetchRequest: NSFetchRequest<Beacon> = Beacon.fetchRequest()
+            
+            if let result = try? context.fetch(fetchRequest) {
+                context.delete(result[indexPath.row])
+                print("RAO: Item deleted from Core Data.")
+            }
+            do {
+                try context.save()
+                print("RAO: Data saved to Core Data.")
+            } catch let error as NSError {
+                print("RAO: Could not save data. \(error), \(error.userInfo)")
+            }
+            loadCoreData()
+            
+            tableView.reloadData()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
