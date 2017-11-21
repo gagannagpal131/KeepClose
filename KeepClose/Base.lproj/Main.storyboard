@@ -113,12 +113,13 @@
                     <navigationItem key="navigationItem" title="Connected Items" id="VwN-we-bUb">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="FiT-xY-rIA">
                             <connections>
-                                <segue destination="HQV-Na-dGB" kind="show" id="rEA-Oh-51h"/>
+                                <action selector="AddBeaconButton:" destination="BYZ-38-t0r" id="klA-6z-f3p"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Gyh-dQ-BPA" id="PFH-X5-KhX"/>
+                        <segue destination="HQV-Na-dGB" kind="show" identifier="To_AddBeacon" id="Ubj-0q-xI9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -265,7 +266,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ddA-hx-1Uu" kind="show" id="4Tc-io-QLd"/>
+                                    <action selector="GetStartedButton:" destination="gQh-Eh-OFM" eventType="touchUpInside" id="fVm-MB-oBE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -281,6 +282,7 @@
                     <connections>
                         <outlet property="getStartedBtn" destination="xQD-Cr-yV3" id="w2F-l4-cuW"/>
                         <outlet property="onboardingView" destination="kcD-yh-bxR" id="8Ud-2B-dkp"/>
+                        <segue destination="ddA-hx-1Uu" kind="show" identifier="To_TableView" id="Ex4-g6-mic"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8f-IZ-KIN" userLabel="First Responder" sceneMemberID="firstResponder"/>

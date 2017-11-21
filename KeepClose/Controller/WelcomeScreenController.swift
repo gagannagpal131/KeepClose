@@ -15,8 +15,11 @@ class WelcomeScreenController: UIViewController,PaperOnboardingDataSource, Paper
     
     @IBOutlet weak var getStartedBtn: UIButton!
     
+    let generator = UIImpactFeedbackGenerator(style: .heavy)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         onboardingView.dataSource = self
         onboardingView.delegate = self
     }
@@ -58,10 +61,23 @@ class WelcomeScreenController: UIViewController,PaperOnboardingDataSource, Paper
     
     func onboardingDidTransitonToIndex(_ index: Int) {
         if index == 2{
-            UIView.animate(withDuration: 0.4, animations: {
-                self.getStartedBtn.alpha = 1
+            
+                        generator.prepare()
+                        UIView.animate(withDuration: 0.4, animations: {
+                        self.getStartedBtn.alpha = 1
             })
         }
     }
+    
+    
+    @IBAction func GetStartedButton(_ sender: Any) {
+        
+        generator.impactOccurred()
+        performSegue(withIdentifier: "To_TableView", sender: self)
+        
+        
+    }
+    
+    
     
 }

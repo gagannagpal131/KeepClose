@@ -195,7 +195,7 @@ extension AppDelegate {
     
     func repeat_value() {
         
-        gameTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+        gameTimer = Timer.scheduledTimer(timeInterval: 1.75, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         
     }
     

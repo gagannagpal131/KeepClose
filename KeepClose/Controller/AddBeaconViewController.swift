@@ -19,6 +19,8 @@ class AddBeaconViewController: UIViewController {
     @IBOutlet weak var minorTextField: UITextField!
     @IBOutlet weak var addButton: UIButton!
     
+     let generator = UIImpactFeedbackGenerator(style: .heavy)
+    
     @IBOutlet var blurView: UIView!
     
     var imagePicker: UIImagePickerController!
@@ -28,6 +30,8 @@ class AddBeaconViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        generator.prepare()
         
         blurView.layer.cornerRadius = 50.0
         
@@ -75,6 +79,8 @@ class AddBeaconViewController: UIViewController {
     
     // Save beacon data to Core Data.
     @IBAction func addButtonTapped(_ sender: UIButton) {
+        
+        generator.impactOccurred()
         
         self.view.endEditing(true)
         

@@ -20,9 +20,12 @@ class ViewController: UIViewController {
     var beacons = [Beacon]()
     var beaconItems = [BeaconItem]()
     var locationManager = CLLocationManager()
+    let generator = UIImpactFeedbackGenerator(style: .heavy)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        generator.prepare()
         
         navigationController?.navigationBar.barTintColor  = UIColor.init(red: 240/255, green: 255/255, blue: 255/255, alpha: 1.0)
         
@@ -38,9 +41,17 @@ class ViewController: UIViewController {
         print("GAGAN: \(beacons.count)")
     }
     
+    @IBAction func AddBeaconButton(_ sender: Any) {
+    
+        generator.impactOccurred()
+        performSegue(withIdentifier: "To_AddBeacon", sender: self)
+        
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         self.loadCoreData()
+        generator.prepare()
     }
     
     func getBeacon() -> [Beacon] {
@@ -166,4 +177,7 @@ extension ViewController: CLLocationManagerDelegate {
             }
         }
     }
+    
+    
+    
 }
